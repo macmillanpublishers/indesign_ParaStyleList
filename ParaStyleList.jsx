@@ -1,7 +1,7 @@
-// Returns the page number of the first instance of each pra style in use in the doc
-// As well as a compiled list of pages that new styles occur on, for creating a sample PDF
+// Returns the page number of the first instance of each para style in use in the doc
+// as well as a compiled list of pages that new styles occur on, for creating a sample PDF
 // Need to add support for char styles...
-// In designer docs, include note to add a range of +2 after chap num/chap title...
+// In designer docs, include note to add a range of +2 after chap num/chap title... will script this eventually...
 
 (function() {
 if (app.documents.length > 0) {
