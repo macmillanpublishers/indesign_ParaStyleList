@@ -43,22 +43,30 @@ for (var j = 0; myPages.length > j; j++) {
 	}
 }
 
-theStory.insertionPoints[-1].contents = "FIRST INSTANCE OF EACH STYLE IN USE:";
+theStory.insertionPoints[-1].contents = "FIRST INSTANCE OF EACH STYLE IN USE, SORTED BY PAGE:";
 theStory.insertionPoints[-1].contents = "\r";
 
 arr.sort();
-var instances = []
+var instances = [];
+var sortByPage = [];
 
 for (var k = 0; arr.length > k; k++) {
 	working = arr[k].split(",")
 	curr = working[0];
 	myPage = working[1];
+	style = working[1] + ":" + working[0];
 	if (curr !== last) {
 	instances.push(myPage);
-	theStory.insertionPoints[-1].contents = arr[k];
-	theStory.insertionPoints[-1].contents = "\r";
+	sortByPage.push(style);
 	}
 	last = curr;
+}
+
+sortByPage.sort();
+
+for (var x = 0; sortByPage.length > x; x++) {
+	theStory.insertionPoints[-1].contents = sortByPage[x];
+	theStory.insertionPoints[-1].contents = "\r";
 }
 
 instances.sort();
